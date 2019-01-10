@@ -58,7 +58,7 @@ function shalat($keyword) {
 	$result .= $json['data']['Maghrib'];
 	$result .= "\nIsya     : ";
 	$result .= $json['data']['Isha'];
-	$result .= "\n\n Kang Mus - Bot @yqh3229f ";
+	$result .= "\n\n Kang Mus - Bot ";
     return $result;
 }
 #-------------------------[Function]-------------------------#
