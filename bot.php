@@ -9,8 +9,8 @@ Modified @ Farzain - zFz
 require_once('./line_class.php');
 require_once('./unirest-php-master/src/Unirest.php');
 
-$channelAccessToken = 'YOUR-CHANNEL-ACCESS-TOKEN'; //sesuaikan 
-$channelSecret = 'YOUR-CHANNEL-SECRET-CODE';//sesuaikan
+$channelAccessToken = 'lShFt9Xb+v2cES5hcoZTH6xbTRNAqBVcIg6cNQx0cBVaeMX+IZ1nxnS/DcLm49JHiNmjkNPidBK2i3/g8/bgB9jvv99y7TW1c2V6ysNbDNzZuxVqjj6VG3n1OlkraHv7U4Fidh4FnhMh6rv9NNaXGwdB04t89/1O/w1cDnyilFU='; //sesuaikan 
+$channelSecret = '7cc2ad65b04b06e2b233eb216f3a6c08';//sesuaikan
 
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
 
@@ -43,20 +43,22 @@ function shalat($keyword) {
     $response = Unirest\Request::get("$uri");
 
     $json = json_decode($response->raw_body, true);
-    $result = "Jadwal Shalat Sekitar ";
-	$result .= $json['location']['address'];
+	$result = "•بِسْمِ اللّهِ الرَّحْمَنِ الرَّحِيْمِ•
+		\nJadwal shalat untuk daerah ";
+	$result .= $json['location']'\n'['address'];
 	$result .= "\nTanggal : ";
 	$result .= $json['time']['date'];
 	$result .= "\n\nShubuh : ";
 	$result .= $json['data']['Fajr'];
-	$result .= "\nDzuhur : ";
+	$result .= "\nDzuhur   : ";
 	$result .= $json['data']['Dhuhr'];
-	$result .= "\nAshar : ";
+	$result .= "\nAshar    : ";
 	$result .= $json['data']['Asr'];
-	$result .= "\nMaghrib : ";
+	$result .= "\nMaghrib  : ";
 	$result .= $json['data']['Maghrib'];
-	$result .= "\nIsya : ";
+	$result .= "\nIsya     : ";
 	$result .= $json['data']['Isha'];
+	$result .= "\n\n Kang Mus - Bot @yqh3229f ";
     return $result;
 }
 #-------------------------[Function]-------------------------#
@@ -104,7 +106,7 @@ if($message['type']=='text') {
 							'messages' => array(
 								array(
 										'type' => 'text',									
-										'text' => 'Makasih Kak Stikernya ^_^'										
+										'text' => ''										
 									
 									)
 							)
